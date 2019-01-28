@@ -1,0 +1,6 @@
+[submodule ".local/share/zplug"]
+	path = .local/share/zplug
+	url = https://github.com/zplug/zplug
+[submodule ".local/share/asdf"]
+	path = .local/share/asdf
+	url = https://github.com/asdf-vm/asdf.git
