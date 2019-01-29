@@ -1,8 +1,8 @@
-# Path to dot files
-export DOTCONF="$HOME/.config"
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Vi style line editing
 bindkey -v

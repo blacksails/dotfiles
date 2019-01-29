@@ -1,4 +1,4 @@
-export ZPLUG_HOME=$HOME/.local/share/zplug
+export ZPLUG_HOME=$XDG_DATA_HOME/zplug
 
 source $ZPLUG_HOME/init.zsh
 
