@@ -1,8 +1,10 @@
 # dotfiles
 
-## Prerequisites
+## Packages to install
 
 - neovim
+- tmux
+- git
 
 ## Installation
 
