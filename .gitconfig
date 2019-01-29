@@ -1,0 +1,27 @@
+[core]
+  excludesfile = /Users/blacksails/.gitignore_global
+[user]
+  name = Benjamin Nørgaard
+  email = b@noergaard.dk
+  signingkey = 7186A778F1D582E54296319EE683F039987FFD17
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[commit]
+  gpgsign = true
+[alias]
+  l = !git --no-pager log --graph --pretty=format:'%C(magenta)%d %C(reset)%<(10)%s %C(cyan)%>(7)%h %aN' -n 20
+  ll = !git -c color.ui=auto log --graph --pretty=tformat:"%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset}%C(bold red)%d%Creset %s" -100|  column -s '}' -t
+[push]
+  default = current
+[gpg]
+  program = /usr/local/bin/gpg
+[pull]
+	rebase = true
