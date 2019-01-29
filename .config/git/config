@@ -1,5 +1,5 @@
 [core]
-  excludesfile = /Users/blacksails/.gitignore_global
+  excludesfile = $XDG_CONFIG_HOME/git/ignore
 [user]
   name = Benjamin Nørgaard
   email = b@noergaard.dk
