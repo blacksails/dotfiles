@@ -6,5 +6,6 @@ zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/kubectl", from:oh-my-zsh
+zplug "zsh-users/zsh-completions"
 
 zplug load
