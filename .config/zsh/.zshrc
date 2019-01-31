@@ -8,6 +8,11 @@ export EDITOR='nvim'
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+# load files required before plugins
+for file in $ZDOTDIR/beforeplugins.conf.d/*.zsh; do
+  source $file
+done
+
 # load zplug
 source "$ZDOTDIR/zplug.zsh"
 
