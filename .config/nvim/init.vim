@@ -141,6 +141,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 " Colors
 set background=dark
 colorscheme solarized
+hi Normal ctermbg=NONE
 
 " Vim GUI
 set guifont=Hack:h12
