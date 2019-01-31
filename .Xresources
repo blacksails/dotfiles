@@ -83,7 +83,7 @@ URxvt*letterSpace:                -1
 
 URxvt.intensityStyles:            false
 URxvt.depth:                      32
-URxvt.background:                 [100]S_base03
+URxvt.background:                 [93]S_base03
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
