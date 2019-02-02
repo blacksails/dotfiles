@@ -1,0 +1,80 @@
+Create Both
+Expunge Both
+SyncState *
+
+
+IMAPAccount noergaard
+Host imap.gmail.com
+User b@noergaard.dk
+PassCmd "gpg -q --no-tty -d ~/.config/mbsync/noergaard.gpg"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore noergaard-remote
+Account noergaard
+
+MaildirStore noergaard-local
+Subfolders Verbatim
+Path ~/.local/share/mail/noergaard/
+Inbox ~/.local/share/mail/noergaard/inbox
+
+Channel noergaard-inbox
+Master :noergaard-remote:
+Slave :noergaard-local:
+Patterns "INBOX"
+
+Channel noergaard-sent
+Master :noergaard-remote:"[Gmail]/Sent Mail"
+Slave :noergaard-local:sent
+
+Channel noergaard-drafts
+Master :noergaard-remote:"[Gmail]/Drafts"
+Slave :noergaard-local:drafts
+
+Channel noergaard-trash
+Master :noergaard-remote:"[Gmail]/Trash"
+Slave :noergaard-local:trash
+
+Group noergaard
+Channel noergaard-inbox
+Channel noergaard-sent
+Channel noergaard-drafts
+Channel noergaard-trash
+
+IMAPAccount lix
+Host imap.gmail.com
+User benn@lix.com
+PassCmd "gpg -q --no-tty -d ~/.config/mbsync/lix.gpg"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore lix-remote
+Account lix
+
+MaildirStore lix-local
+Subfolders Verbatim
+Path ~/.local/share/mail/lix/
+Inbox ~/.local/share/mail/lix/inbox
+
+Channel lix-inbox
+Master :lix-remote:
+Slave :lix-local:
+Patterns "INBOX"
+
+Channel lix-sent
+Master :lix-remote:"[Gmail]/Sent Mail"
+Slave :lix-local:sent
+
+Channel lix-drafts
+Master :lix-remote:"[Gmail]/Drafts"
+Slave :lix-local:drafts
+
+Channel lix-trash
+Master :lix-remote:"[Gmail]/Trash"
+Slave :lix-local:trash
+
+Group lix
+Channel lix-inbox
+Channel lix-sent
+Channel lix-drafts
+Channel lix-trash
