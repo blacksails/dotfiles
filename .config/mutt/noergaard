@@ -8,3 +8,6 @@ set spoolfile = "$XDG_DATA_HOME/mail/noergaard/inbox"
 set postponed = "$XDG_DATA_HOME/mail/noergaard/drafts"
 set trash = "$XDG_DATA_HOME/mail/noergaard/trash"
 set record = "$XDG_DATA_HOME/mail/noergaard/sent"
+
+# index/pager
+macro index,pager A "<save-message>=noergaard/all<enter>" "Archive Message"

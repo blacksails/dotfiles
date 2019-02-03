@@ -15,15 +15,16 @@ set sort_browser = "reverse-date"
 set sort_aux = "last-date-received"
 unset collapse_unread
 
-# sidebar
-set sidebar_visible = yes
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+# pager
+macro pager \cb <pipe-entry>'urlscan -d'<enter> 'Follow links with urlview'
 
 mailboxes +noergaard/inbox \
+          +noergaard/all \
           +noergaard/sent \
           +noergaard/trash \
           +noergaard/drafts \
           +lix/inbox \
+          +lix/all \
           +lix/sent \
           +lix/trash \
           +lix/drafts \

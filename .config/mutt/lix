@@ -8,3 +8,6 @@ set spoolfile = "$XDG_DATA_HOME/mail/lix/inbox"
 set postponed = "$XDG_DATA_HOME/mail/lix/drafts"
 set trash = "$XDG_DATA_HOME/mail/lix/trash"
 set record = "$XDG_DATA_HOME/mail/lix/sent"
+
+# index/pager
+macro index,pager A "<save-message>=lix/all<enter>" "Archive Message"

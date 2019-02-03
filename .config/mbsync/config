@@ -2,7 +2,6 @@ Create Both
 Expunge Both
 SyncState *
 
-
 IMAPAccount noergaard
 Host imap.gmail.com
 User b@noergaard.dk
@@ -23,6 +22,10 @@ Master :noergaard-remote:
 Slave :noergaard-local:
 Patterns "INBOX"
 
+Channel noergaard-all
+Master :noergaard-remote:"[Gmail]/All Mail"
+Slave :noergaard-local:all
+
 Channel noergaard-sent
 Master :noergaard-remote:"[Gmail]/Sent Mail"
 Slave :noergaard-local:sent
@@ -37,6 +40,7 @@ Slave :noergaard-local:trash
 
 Group noergaard
 Channel noergaard-inbox
+Channel noergaard-all
 Channel noergaard-sent
 Channel noergaard-drafts
 Channel noergaard-trash
@@ -61,6 +65,10 @@ Master :lix-remote:
 Slave :lix-local:
 Patterns "INBOX"
 
+Channel lix-all
+Master :lix-remote:"[Gmail]/All Mail"
+Slave :lix-local:all
+
 Channel lix-sent
 Master :lix-remote:"[Gmail]/Sent Mail"
 Slave :lix-local:sent
@@ -75,6 +83,7 @@ Slave :lix-local:trash
 
 Group lix
 Channel lix-inbox
+Channel lix-all
 Channel lix-sent
 Channel lix-drafts
 Channel lix-trash
