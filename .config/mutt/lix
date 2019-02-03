@@ -1,0 +1,10 @@
+# vi: ft=muttrc
+set smtp_url = "smtps://benn@lix.com@smtp.gmail.com:465/"
+set smtp_pass = $my_lix_pass
+set from = "benn@lix.com"
+set realname = "Benjamin Nørgaard"
+
+set spoolfile = "$XDG_DATA_HOME/mail/lix/inbox"
+set postponed = "$XDG_DATA_HOME/mail/lix/drafts"
+set trash = "$XDG_DATA_HOME/mail/lix/trash"
+set record = "$XDG_DATA_HOME/mail/lix/sent"

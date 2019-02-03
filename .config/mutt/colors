@@ -1,0 +1,6 @@
+# vi: ft=muttrc
+
+# index
+color index color12       default ~A # all messages
+color index brightblue    default ~U # unread messages
+color index color10       default ~D # deleted messages
