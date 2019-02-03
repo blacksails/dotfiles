@@ -5,7 +5,7 @@ set folder = "$XDG_DATA_HOME/mail"
 folder-hook 'noergaard/*' 'source $XDG_CONFIG_HOME/mutt/noergaard'
 folder-hook 'lix/*' 'source $XDG_CONFIG_HOME/mutt/lix'
 
-# index 
+# index
 macro index <f2> '<change-folder> = $XDG_DATA_HOME/mail/noergaard'
 macro index <f3> '<change-folder> = $XDG_DATA_HOME/mail/lix'
 macro index G "!mbsync -c $XDG_CONFIG_HOME/mbsync/config -a^M" "Run mbsync"
