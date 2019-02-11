@@ -72,7 +72,7 @@ XTerm*selectToClipboard: true
 *color7:                S_base2
 *color15:               S_base3
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: Adwaita
 Xcursor.size:                     0
 
 URxvt.font:                       xft:Hack Nerd Font Mono:pixelsize=13
