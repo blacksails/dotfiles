@@ -4,6 +4,7 @@
 bold_is_bright = false
 #clickable_url = true
 #dynamic_title = true
+font = Noto Color Emoji
 font = Hack Nerd Font 9.5
 #fullscreen = true
 #icon_name = terminal
