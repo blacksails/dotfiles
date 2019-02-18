@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite -d $(xcwd)
 
 # kill focused window
 #bindsym $mod+Shift+q kill
@@ -55,6 +55,13 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+# Add bindings for media
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioForward exec playerctl next
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioRewind exec playerctl previous
+bindsym XF86AudioPrev exec playerctl previous
 
 # Start Applications
 bindsym $mod+Ctrl+b exec termite -e 'bmenu'
