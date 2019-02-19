@@ -1,5 +1,5 @@
 export SPACESHIP_PROMPT_ORDER=(
-  time
+# time
   dir
   git
   node
