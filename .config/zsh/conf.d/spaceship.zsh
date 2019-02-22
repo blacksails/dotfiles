@@ -28,7 +28,11 @@ export SPACESHIP_GIT_BRANCH_PREFIX=$SPACESHIP_GIT_SYMBOL
 # package
 export SPACESHIP_PACKAGE_SHOW=false
 
+# node
 export SPACESHIP_NODE_SYMBOL="\uf898 "
+
+# ruby
+export SPACESHIP_RUBY_SYMBOL="\uf43b "
 
 # golang
 export SPACESHIP_GOLANG_SHOW=false
