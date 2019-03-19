@@ -1,28 +1,38 @@
 call plug#begin('~/.local/share/nvim/plugged')
+" general
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'jwilm/i3-vim-focus'
+
+" completion
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" javascript
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'digitaltoad/vim-pug'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
-Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'flowtype/vim-flow', { 'do': 'npm install -g flow-bin', 'for': ['javascript'] }
-Plug 'dag/vim-fish'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'wokalski/autocomplete-flow'
+
+" golang
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" elixir
 Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 call plug#end()
 
 " Set leader to comma
@@ -59,22 +69,30 @@ let g:airline_powerline_fonts = 1
 " ========
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['\.sw.$','^\.git$','.DS_Store']
-autocmd StdinReadPre * let s:std_in=1 " start nerdtree automatically
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeWinPos = 'left'
+"autocmd StdinReadPre * let s:std_in=1 " start nerdtree automatically
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <F5> :NERDTreeToggle <BAR> :TagbarToggle<CR>
 map <F4> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFocus<CR>
+
+" tagbar
+" ======
+let g:tagbar_left = 0
+let g:tagbar_vertical = 40
+let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['▸', '▾']
 
 " deoplete
 " ========
 let g:deoplete#enable_at_startup = 1
 
-" vim-tmux-navigator
+" i3-vim-focus
 " ==================
-" change <bs> when this gets fixed https://github.com/neovim/neovim/issues/2048
-nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
+map gwl :call Focus('right', 'l')<CR>
+map gwh :call Focus('left', 'h')<CR>
+map gwk :call Focus('up', 'k')<CR>
+map gwj :call Focus('down', 'j')<CR>
 
 " vim-easymotion
 " ==============
@@ -101,7 +119,7 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_fmt_command = "goimports"
 
 " lint go files on save
-"let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 1
 
 " only use quickfix list
 "let g:go_list_type = "quickfix"

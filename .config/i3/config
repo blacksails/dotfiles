@@ -83,10 +83,10 @@ bindsym $mod+Ctrl+space exec "splatmoji type"
 focus_follows_mouse no
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h exec "i3-vim-focus left"
+bindsym $mod+j exec "i3-vim-focus down"
+bindsym $mod+k exec "i3-vim-focus up"
+bindsym $mod+l exec "i3-vim-focus right"
 
 # move focused window
 bindsym $mod+Shift+h move left

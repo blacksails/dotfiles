@@ -1,9 +1,5 @@
 output DP1
 off
-output DP1-1
-off
-output DP1-8
-off
 output DP2
 off
 output VIRTUAL1
