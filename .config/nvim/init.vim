@@ -87,12 +87,16 @@ let g:tagbar_iconchars = ['▸', '▾']
 " ========
 let g:deoplete#enable_at_startup = 1
 
-" i3-vim-focus
+" i3-vim-focus / split navigation
 " ==================
 map gwl :call Focus('right', 'l')<CR>
 map gwh :call Focus('left', 'h')<CR>
 map gwk :call Focus('up', 'k')<CR>
 map gwj :call Focus('down', 'j')<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " vim-easymotion
 " ==============
@@ -226,3 +230,5 @@ set mouse+=a
 
 " Show column 80
 set colorcolumn=81
+
+set titlestring=VIM
