@@ -7,5 +7,6 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
+zplug "lib/termsupport", from:oh-my-zsh
 
 zplug load
