@@ -1,1 +1,0 @@
-export TILLER_NAMESPACE=tiller
