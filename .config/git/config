@@ -1,5 +1,5 @@
 [core]
-  excludesfile = $XDG_CONFIG_HOME/git/ignore
+  excludesfile = ~/.config/git/ignore
 [user]
   name = Benjamin Nørgaard
   email = b@noergaard.dk
@@ -8,6 +8,7 @@
   path = ~/.config/git/workconfig
 [merge]
   tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]
