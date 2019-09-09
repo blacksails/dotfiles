@@ -1,4 +1,8 @@
-call plug#begin('~/.local/share/nvim/plugged')
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
 " general
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -10,11 +14,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'jwilm/i3-vim-focus'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'darfink/vim-plist'
+Plug 'hashivim/vim-vagrant'
+Plug 'rodjek/vim-puppet'
 
 " completion
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " javascript
 Plug 'pangloss/vim-javascript'
@@ -187,7 +201,7 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " Colors
-set background=dark
+set background=light
 colorscheme solarized
 hi Normal ctermbg=NONE
 
