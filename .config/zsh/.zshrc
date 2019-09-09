@@ -10,15 +10,15 @@ bindkey '^R' history-incremental-search-backward
 
 # load files required before plugins
 for file in $ZDOTDIR/beforeplugins.conf.d/*.zsh; do
-  source $file
+  . $file
 done
 
 # load zplug
-source "$ZDOTDIR/zplug.zsh"
+. "$ZDOTDIR/zplug.zsh"
 
 # load other config files
 for file in $ZDOTDIR/conf.d/*.zsh; do
-  source $file
+  . $file
 done
 
 autoload -U compinit&& compinit
