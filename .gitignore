@@ -1,4 +1,4 @@
 .files
 .config/zsh/.zcompdump
 .config/git/auth
-.config/zsh/conf.d/homebrew.zsh
+.config/zsh/secrets.zsh

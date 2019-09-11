@@ -36,12 +36,5 @@
   program = /usr/local/bin/gpg
 [pull]
   rebase = true
-[include]
-  # The auth file contains an instead of statement which uses a token for
-  # github access. This is useful for makeing go modules and others able to
-  # pull private repos.
-  #
-  # eg.
-  # [url "https://<token>:x-oauth-basic@github.com/"]
-  #   insteadOf = https://github.com/
-  path = ~/.config/git/auth
+[credential]
+  helper = osxkeychain
