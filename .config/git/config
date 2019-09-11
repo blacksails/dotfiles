@@ -20,8 +20,6 @@
 [commit]
   gpgsign = true
 [alias]
-  l = !git --no-pager log --graph --pretty=format:'%C(magenta)%d %C(reset)%<(10)%s %C(cyan)%>(7)%h %aN' -n 20
-  ll = !git -c color.ui=auto log --graph --pretty=tformat:"%C(yellow)%h%Creset}%Cgreen(%ar)%Creset}%C(bold blue)<%an>%Creset}%C(bold red)%d%Creset %s" -100|  column -s '}' -t
   rb = "!f() { \
     set -e; \
     UPSTREAM=$1; \
