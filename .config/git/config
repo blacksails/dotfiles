@@ -8,15 +8,17 @@
   path = ~/.config/git/workconfig
 [merge]
   tool = vimdiff
-  conflictstyle = diff3
 [mergetool]
   prompt = false
+  keepbackup = false
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [diff]
   tool = vimdiff
 [difftool]
   prompt = false
+[difftool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
 [commit]
   gpgsign = true
 [alias]
@@ -29,7 +31,8 @@
     git pull upstream \"${UPSTREAM}\"; \
     git checkout \"${BRANCH}\"; \
     git rebase -i \"${UPSTREAM}\"; \
-  }; f"
+    }; f"
+  d = difftool
 [push]
   default = current
 [gpg]
