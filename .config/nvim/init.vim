@@ -5,6 +5,8 @@ else
 endif
 " general
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
@@ -18,6 +20,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'pprovost/vim-ps1'
 Plug 'hashivim/vim-terraform'
+Plug 'liuchengxu/vista.vim'
+Plug 'airblade/vim-gitgutter'
 
 " completion
 Plug 'SirVer/ultisnips'
@@ -94,6 +98,14 @@ let g:NERDTreeWinPos = 'left'
 map <F5> :NERDTreeToggle<CR>
 map <F4> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFocus<CR>
+" disable arrows
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
+
+" vim-devicons
+" ============
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " vim-easymotion
 " ==============
@@ -106,6 +118,10 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" vista.vim
+" =========
+"let g:vista_default_executive = "coc"
 
 " vim-go
 " ======
@@ -291,3 +307,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+set pyx=3
