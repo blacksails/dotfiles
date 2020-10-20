@@ -5,7 +5,7 @@ export SPACESHIP_PROMPT_ORDER=(
   node
   ruby
   elixir
-  kubecontext
+  kubectl_context
   line_sep
   char
 )
