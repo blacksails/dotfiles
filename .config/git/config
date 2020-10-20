@@ -3,7 +3,7 @@
 [user]
   name = Benjamin Nørgaard
   email = b@noergaard.dk
-  signingkey = 7186A778F1D582E54296319EE683F039987FFD17
+  signingkey = E683F039987FFD17
 [includeIf "gitdir:~/go/src/github.com/Tradeshift/"]
   path = ~/.config/git/workconfig
 [merge]
@@ -36,10 +36,8 @@
 [push]
   default = current
 [gpg]
-  program = /usr/local/bin/gpg
+  program = /usr/bin/gpg
 [pull]
   rebase = true
-[credential]
-	helper = osxkeychain
 [hub]
-	protocol = https
+  protocol = https
