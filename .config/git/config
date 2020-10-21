@@ -41,3 +41,5 @@
   rebase = true
 [hub]
   protocol = https
+[credential]
+  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
