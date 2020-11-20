@@ -27,6 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tjdevries/coc-zsh'
 
 " javascript
 Plug 'pangloss/vim-javascript'
