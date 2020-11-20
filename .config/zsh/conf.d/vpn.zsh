@@ -1,8 +1,11 @@
-export VPN_ENDPOINT="https://cphvpn.tradeshift.com/"
-export VPN_OP_ITEM="fntikzwofn7vqmu43c7chfakby"
-export VPN_OP_TEAM="my"
-
 function vpn() {
+  local VPN_OP_ITEM="fntikzwofn7vqmu43c7chfakby"
+  local VPN_OP_TEAM="my"
+  local VPN_ENDPOINT="https://cphvpn.tradeshift.com/"
+  if [[ "$1" == "cn" ]]; then
+    VPN_ENDPOINT="https://szhvpn.tradeshiftchina.cn/"
+  fi
+
   local OP_SESSION=$(printenv OP_SESSION_${VPN_OP_TEAM})
   
   # get pw and token from 1password
@@ -18,7 +21,7 @@ function vpn() {
 
   echo "$VPN_PASSWORD,$VPN_OTP" | \
     sudo openconnect \
-    --protocol=pulse \
+    --juniper \
     --no-dtls \
     -u $VPN_USERNAME \
     --passwd-on-stdin \
