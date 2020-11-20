@@ -5,4 +5,4 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
   . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]
 fi
 
-export CLOUDSDK_PYTHON=$(which python)
+export CLOUDSDK_PYTHON=$(which python2)
