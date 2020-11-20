@@ -5,6 +5,12 @@
       "rootPatterns": ["go.mod"],
       "disableWorkspaceFolders": true,
       "filetypes": ["go"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "zsh"],
+      "ignoredRootPaths": ["~"]
     }
   }
 }
