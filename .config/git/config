@@ -37,9 +37,9 @@
   default = current
 [gpg]
   program = /usr/bin/gpg
-[pull]
-  rebase = true
 [hub]
   protocol = https
 [credential]
   helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[pull]
+  rebase = false
