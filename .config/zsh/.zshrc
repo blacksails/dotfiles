@@ -8,7 +8,9 @@ export EDITOR='nvim'
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
-. "$ZDOTDIR/secrets.zsh"
+if [[ -f "$ZDOTDIR/secrets.zsh" ]]; then
+  . "$ZDOTDIR/secrets.zsh"
+fi
 
 # load files required before plugins
 for file in $ZDOTDIR/beforeplugins.conf.d/*.zsh; do
