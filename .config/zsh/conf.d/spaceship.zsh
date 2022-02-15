@@ -1,10 +1,8 @@
 export SPACESHIP_PROMPT_ORDER=(
-# time
   dir
   git
   node
   ruby
-  elixir
   kubectl_context
   line_sep
   char
@@ -12,10 +10,6 @@ export SPACESHIP_PROMPT_ORDER=(
 
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_PROMPT_PREFIXES_SHOW=false
-
-# time
-export SPACESHIP_TIME_SHOW=true
-export SPACESHIP_TIME_COLOR=blue
 
 # dir
 export SPACESHIP_DIR_TRUNC=0
