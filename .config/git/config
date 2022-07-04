@@ -1,11 +1,16 @@
+# vi: ft=gitconfig
 [core]
   excludesfile = ~/.config/git/ignore
 [user]
   name = Benjamin Nørgaard
-  email = b@noergaard.dk
+  email = mail@blacksails.dev
   signingkey = E683F039987FFD17
-[includeIf "gitdir:~/go/src/github.com/Tradeshift/"]
-  path = ~/.config/git/workconfig
+[includeIf "gitdir:/mnt/c/"]
+  path = ~/.config/git/windows
+[includeIf "gitdir:/Users"]
+  path = ~/.config/git/macos
+[includeIf "gitdir:~/go/src/git.bankdata.eficode.io/"]
+  path = ~/.config/git/bankdata
 [merge]
   tool = vimdiff
 [mergetool]
@@ -20,7 +25,7 @@
 [difftool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
 [commit]
-  gpgsign = true
+  gpgsign = false
 [alias]
   rb = "!f() { \
     set -e; \
@@ -28,7 +33,7 @@
     BRANCH=$(git rev-parse --abbrev-ref HEAD); \
     echo \"$BRANCH\"; \
     git checkout \"${UPSTREAM}\"; \
-    git pull upstream \"${UPSTREAM}\"; \
+    git pull origin \"${UPSTREAM}\"; \
     git checkout \"${BRANCH}\"; \
     git rebase -i \"${UPSTREAM}\"; \
     }; f"
@@ -39,7 +44,5 @@
   program = /usr/bin/gpg
 [hub]
   protocol = https
-[credential]
-  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [pull]
   rebase = false

@@ -1,0 +1,5 @@
+# vi: ft=gitconfig
+[credential]
+  helper = /mnt/c/Users/bdybng/AppData/Local/Programs/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
+[gpg]
+  program = /usr/bin/gpg
