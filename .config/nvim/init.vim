@@ -22,6 +22,8 @@ Plug 'pprovost/vim-ps1'
 Plug 'hashivim/vim-terraform'
 Plug 'liuchengxu/vista.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'martinda/jenkinsfile-vim-syntax'
+Plug 'vimwiki/vimwiki'
 
 " completion
 Plug 'SirVer/ultisnips'
@@ -46,6 +48,13 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 call plug#end()
+
+" vimwiki
+let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+nmap <Leader>gl<Space> <Plug>VimwikiToggleListItem
+
+" hashivim/vim-terraform
+let g:terraform_fmt_on_save = 1
 
 " Set leader to comma
 let mapleader=","
@@ -126,6 +135,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 " vim-go
 " ======
+" diable use of gopls
+let g:go_gopls_enabled = 0
 " tabsettings
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 " replace gofmt with goimports
