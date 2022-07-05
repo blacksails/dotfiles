@@ -5,7 +5,7 @@
   name = Benjamin Nørgaard
   email = mail@blacksails.dev
   signingkey = E683F039987FFD17
-[includeIf "gitdir:/mnt/c/"]
+[includeIf "gitdir:/home/"]
   path = ~/.config/git/windows
 [includeIf "gitdir:/Users"]
   path = ~/.config/git/macos
@@ -40,8 +40,6 @@
   d = difftool
 [push]
   default = current
-[gpg]
-  program = /usr/bin/gpg
 [hub]
   protocol = https
 [pull]
