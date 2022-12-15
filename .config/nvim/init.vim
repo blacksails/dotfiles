@@ -37,7 +37,7 @@ call plug#end()
 
 " vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
-nmap <Leader>gl<Space> <Plug>VimwikiToggleListItem
+nmap gl<Space> <Plug>VimwikiToggleListItem
 
 " Set leader to comma
 let mapleader=","
@@ -275,3 +275,14 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc-nvim colors
+" ===============
+hi CocFloating ctermbg=0
+hi CoCMenuSel ctermbg=14 ctermfg=8
+
+" Golang
+" ======
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd FileType go setlocal noexpandtab
+autocmd FileType go setlocal tabstop=2
