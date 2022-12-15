@@ -1,0 +1,29 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$directory$git_branch$git_metrics$all"""
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[docker_context]
+disabled = true
+
+[kubernetes]
+disabled = false
+format = '🔹 [$context\($namespace\)](blue) '
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+disabled = true
+
+[git_metrics]
+disabled = false
+format = '[$added](green) [$deleted](red) '
+added_style = 'green'
+deleted_style = 'red'
+
+[golang]
+format = "[$symbol($version )]($style)"
