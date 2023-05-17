@@ -1,4 +1,5 @@
-.files
-.config/zsh/.zcompdump
-.config/git/auth
-.config/zsh/secrets.zsh
+/.files
+/.config/zsh/.zcompdump
+/.config/git/auth
+/.config/zsh/secrets.zsh
+/.config/nvim/plugin/packer_compiled.lua
