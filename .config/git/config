@@ -4,12 +4,14 @@
 [user]
   name = Benjamin Nørgaard
   email = mail@blacksails.dev
-  signingkey = E683F039987FFD17
+  signingkey = 48C41DDD07F964F9
 [includeIf "gitdir:/home/"]
   path = ~/.config/git/windows
 [includeIf "gitdir:/Users"]
   path = ~/.config/git/macos
 [includeIf "gitdir:~/go/src/git.bankdata.eficode.io/"]
+  path = ~/.config/git/bankdata
+[includeIf "gitdir:~/go/src/github.com/bd-b0100/"]
   path = ~/.config/git/bankdata
 [merge]
   tool = vimdiff
@@ -25,7 +27,7 @@
 [difftool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
 [commit]
-  gpgsign = false
+  gpgsign = true
 [alias]
   rb = "!f() { \
     set -e; \
@@ -33,14 +35,19 @@
     BRANCH=$(git rev-parse --abbrev-ref HEAD); \
     echo \"$BRANCH\"; \
     git checkout \"${UPSTREAM}\"; \
-    git pull origin \"${UPSTREAM}\"; \
+    git pull upstream \"${UPSTREAM}\"; \
     git checkout \"${BRANCH}\"; \
     git rebase -i \"${UPSTREAM}\"; \
     }; f"
   d = difftool
+  m = mergetool
 [push]
   default = current
 [hub]
   protocol = https
 [pull]
   rebase = false
+[credential "https://github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
