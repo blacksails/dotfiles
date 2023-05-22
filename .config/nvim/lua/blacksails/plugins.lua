@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     end,
   }
   use('nvim-treesitter/nvim-treesitter-context')
+  use('nvim-treesitter/playground')
 
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
@@ -63,14 +64,11 @@ return require('packer').startup(function(use)
   }
 
   use {'jose-elias-alvarez/null-ls.nvim'}
-
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
   use('eandrju/cellular-automaton.nvim')
   use('christoomey/vim-tmux-navigator')
   use("laytan/cloak.nvim")
-  use {'rose-pine/neovim', as = 'rose-pine'}
-  use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
 
 end)
