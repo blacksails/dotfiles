@@ -1,17 +1,3 @@
-local theme = require('lualine.themes.auto')
-local c = require('rose-pine.palette')
-
---[[
-local surface = c.surface
-
-theme.inactive.c.bg = surface
-theme.normal.c.bg = surface
-theme.insert.c.bg = surface
-theme.replace.c.bg = surface
-theme.visual.c.bg = surface
-theme.command.c.bg = surface
-]]
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
