@@ -1,5 +1,9 @@
 # vi: ft=gitconfig
 [credential]
   helper = osxkeychain
+[credential "https://github.com"]
+  helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [gpg]
   program = /opt/homebrew/bin/gpg
