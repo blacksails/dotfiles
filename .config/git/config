@@ -5,9 +5,9 @@
   name = Benjamin Nørgaard
   email = mail@blacksails.dev
   signingkey = 48C41DDD07F964F9
-[includeIf "gitdir:/Users"]
+[includeIf "gitdir:/Users/"]
   path = ~/.config/git/macos
-[includeIf "gitdir:/home"]
+[includeIf "gitdir:/home/"]
   path = ~/.config/git/linux
 [includeIf "gitdir:~/go/src/git.bankdata.eficode.io/"]
   path = ~/.config/git/bankdata
