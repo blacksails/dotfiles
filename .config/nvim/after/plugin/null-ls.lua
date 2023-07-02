@@ -4,7 +4,7 @@ local grp = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.gofumpt,
+    null_ls.builtins.formatting.gofmt,
     null_ls.builtins.formatting.goimports,
   },
   on_attach = function(client, bufnr)
