@@ -77,10 +77,11 @@ return require('packer').startup(function(use)
   use {'jose-elias-alvarez/null-ls.nvim'}
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
-  use('eandrju/cellular-automaton.nvim')
-  use('christoomey/vim-tmux-navigator')
+  use("eandrju/cellular-automaton.nvim")
+  use("christoomey/vim-tmux-navigator")
   use("laytan/cloak.nvim")
-  use 'folke/tokyonight.nvim'
+  use "folke/tokyonight.nvim"
+  use "kylechui/nvim-surround"
 
   if packer_bootstrap then
     require('packer').sync()
