@@ -8,6 +8,9 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
       if vim.fn.search("{{.\\+}}", "nw") ~= 0 then
         vim.bo.filetype = "gotmpl"
       end
+	  vim.bo.tabstop = 2
+	  vim.bo.softtabstop = 2
+	  vim.bo.shiftwidth = 2
     end)
   end,
 })
@@ -20,4 +23,19 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
       vim.bo.filetype = "groovy"
     end)
   end,
+})
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  group = grp,
+  pattern = {"*.go"},
+  callback = function (ev)
+    vim.api.nvim_buf_call(ev.buf, function()
+      vim.bo.expandtab = false
+	end)
+  end,
+})
+
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    group = grp,
+    command = [[%s/\s\+$//e]]
 })
