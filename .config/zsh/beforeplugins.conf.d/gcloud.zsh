@@ -1,8 +1,8 @@
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then 
-  . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+if [ -f "${XDG_DATA_HOME}/google-cloud-sdk/path.zsh.inc" ]; then
+  . "${XDG_DATA_HOME}/google-cloud-sdk/path.zsh.inc"
 fi
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then
-  . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]
+if [ -f "${XDG_DATA_HOME}/google-cloud-sdk/completion.zsh.inc" ]; then
+  . "${XDG_DATA_HOME}/google-cloud-sdk/completion.zsh.inc" ]
 fi
 
-export CLOUDSDK_PYTHON=$(which python2)
+export CLOUDSDK_PYTHON=python3
