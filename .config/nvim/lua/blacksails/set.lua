@@ -30,3 +30,6 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

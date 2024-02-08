@@ -31,10 +31,10 @@ lsp.setup_nvim_cmp({
 lsp.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
+        error = '󰅚',
+        warn = '󰀪',
+        hint = '󰌶',
+        info = '󰋽'
     }
 })
 
@@ -51,10 +51,19 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>vm", function () vim.lsp.buf.implementation() end, opts)
 end)
 
 lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
+})
+
+require "lsp_signature".setup({
+  bind = true, -- This is mandatory, otherwise border config won't get registered.
+  hint_enable = false,
+  handler_opts = {
+    border = "rounded"
+  }
 })
