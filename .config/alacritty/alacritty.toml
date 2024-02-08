@@ -1,0 +1,27 @@
+import = [
+    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_day.toml",
+    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_night.toml",
+    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_storm.toml",
+    "/Users/blacksails/.config/alacritty/tokyonight/tokyonight_moon.toml",
+]
+
+[env]
+TERM = "alacritty-direct"
+
+[font]
+size = 14
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+decorations = "None"
+dynamic_padding = true
+
+[window.padding]
+x = 1
+y = 1
