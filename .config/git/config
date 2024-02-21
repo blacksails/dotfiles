@@ -1,6 +1,10 @@
 # vi: ft=gitconfig
 [core]
   excludesfile = ~/.config/git/ignore
+[branch]
+    sort = -committerdate
+[column]
+    branch = always
 [user]
   name = Benjamin Nørgaard
   email = mail@blacksails.dev
