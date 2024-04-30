@@ -5,6 +5,10 @@
     sort = -committerdate
 [column]
     branch = always
+[tag]
+    sort = -v:refname
+[versionsort]
+    suffix = -
 [user]
   name = Benjamin Nørgaard
   email = mail@blacksails.dev
