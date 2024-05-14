@@ -12,6 +12,7 @@ return {
                 'dirbuf',
                 'dirvish',
                 'fugitive',
+                'NvimTree',
             },
             under_cursor = false,
         },
