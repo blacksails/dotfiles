@@ -48,3 +48,15 @@
   defaultBranch = main
 [gpg]
   program = /opt/homebrew/bin/gpg
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+# Bankdata config
+[includeIf "gitdir:~/go/src/github.com/bd-b0100/"]
+  path = ~/.config/git/bankdata
+[includeIf "gitdir:~/go/src/git.bankdata.eficode.io/"]
+  path = ~/.config/git/bankdata

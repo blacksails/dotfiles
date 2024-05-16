@@ -1,0 +1,4 @@
+# vi: ft=gitconfig
+[user]
+  name = Benjamin Nørgaard
+  email = bdybn9@bankdata.dk
