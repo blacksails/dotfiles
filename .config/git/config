@@ -28,13 +28,14 @@
 [alias]
   rb = "!f() { \
     set -e; \
-    UPSTREAM=$1; \
-    BRANCH=$(git rev-parse --abbrev-ref HEAD); \
-    echo \"$BRANCH\"; \
-    git checkout \"${UPSTREAM}\"; \
-    git pull upstream \"${UPSTREAM}\"; \
-    git checkout \"${BRANCH}\"; \
-    git rebase -i \"${UPSTREAM}\"; \
+    REMOTE="${1:-upstream}"; \
+    MAIN_BRANCH="${2:-main}"; \
+    HEAD_BRANCH=$(git rev-parse --abbrev-ref HEAD); \
+    echo \"$HEAD_BRANCH\"; \
+    git checkout \"${MAIN_BRANCH}\"; \
+    git pull \"${REMOTE}\" \"${MAIN_BRANCH}\"; \
+    git checkout \"${HEAD_BRANCH}\"; \
+    git rebase -i \"${MAIN_BRANCH}\"; \
     }; f"
   d = difftool
   m = mergetool
