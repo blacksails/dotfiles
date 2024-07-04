@@ -16,7 +16,13 @@ end
 local function config()
     local api = require "nvim-tree.api"
 
-    vim.keymap.set('n', '<F3>', api.tree.open)
+    vim.keymap.set('n', '<F3>', function()
+        if api.tree.is_tree_buf() then
+            api.tree.close()
+        else
+            api.tree.open()
+        end
+    end)
 
     require("nvim-tree").setup({
         on_attach = on_attach,

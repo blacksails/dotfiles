@@ -4,3 +4,6 @@
 [submodule ".local/share/asdf"]
 	path = .local/share/asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule ".local/share/nvim/lazy/lazy.nvim"]
+	path = .local/share/nvim/lazy/lazy.nvim
+	url = https://github.com/folke/lazy.nvim

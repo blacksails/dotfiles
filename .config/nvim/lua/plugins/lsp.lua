@@ -144,6 +144,11 @@ return {
                             capabilities = lsp_capabilities,
                         })
                     end,
+                    omnisharp = function()
+                        require("lspconfig").omnisharp.setup({
+
+                        })
+                    end,
                     jdtls = function() end,
                     lua_ls = function()
                         require("lspconfig").lua_ls.setup({
@@ -509,6 +514,25 @@ return {
         "rafamadriz/friendly-snippets",
     },
     {
+        "schrieveslaach/sonarlint.nvim",
+        url = "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
+        config = function()
+            require('sonarlint').setup({
+                server = {
+                    cmd = {
+                        'sonarlint-language-server',
+                        '-stdio',
+                        '-analyzers',
+                        vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+                    }
+                },
+                filetypes = {
+                    'java',
+                }
+            })
+        end
+    },
+    {
         "nvimtools/none-ls.nvim",
         config = function()
             local null_ls = require("null-ls")
@@ -516,6 +540,9 @@ return {
 
             null_ls.setup({
                 sources = {
+                    null_ls.builtins.diagnostics.checkstyle.with({
+                        extra_args = { "-c", "config/checkstyle/checkstyle.xml" }
+                    }),
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.gofmt,
                     null_ls.builtins.formatting.goimports,
