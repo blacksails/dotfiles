@@ -1,8 +1,11 @@
 import = [
-    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_day.toml",
-    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_night.toml",
-    #"/Users/blacksails/.config/alacritty/tokyonight/tokyonight_storm.toml",
-    "/Users/blacksails/.config/alacritty/tokyonight/tokyonight_moon.toml",
+    #"/Users/blacksails/.config/alacritty/themes/tokyonight_day.toml",
+    #"/Users/blacksails/.config/alacritty/themes/tokyonight_night.toml",
+    #"/Users/blacksails/.config/alacritty/themes/tokyonight_storm.toml",
+    #"/Users/blacksails/.config/alacritty/themes/tokyonight_moon.toml",
+    #"/Users/blacksails/.config/alacritty/themes/rose-pine.toml",
+    "/Users/blacksails/.config/alacritty/themes/rose-pine-dawn.toml",
+    #"/Users/blacksails/.config/alacritty/themes/rose-pine-moon.toml",
 ]
 
 [env]
@@ -12,7 +15,7 @@ TERM = "alacritty-direct"
 size = 14
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [font.offset]
 x = 0
