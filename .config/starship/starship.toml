@@ -1,7 +1,12 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """$directory$git_branch$git_metrics$all"""
+format = """
+$directory\
+$git_branch\
+$git_metrics\
+$all
+"""
 
 # Inserts a blank line between shell prompts
 add_newline = false
@@ -24,6 +29,16 @@ disabled = false
 format = '[$added](green) [$deleted](red) '
 added_style = 'green'
 deleted_style = 'red'
+only_nonzero_diffs = false
 
 [golang]
 format = "[$symbol($version )]($style)"
+
+[gradle]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[java]
+disabled = true
