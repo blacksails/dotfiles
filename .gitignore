@@ -5,3 +5,4 @@
 /.config/nvim/plugin/packer_compiled.lua
 /.config/zsh/.zsh_sessions
 /.config/zsh/.zsh_history
+/.config/gradle
