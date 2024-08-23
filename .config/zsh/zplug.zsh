@@ -7,7 +7,6 @@ zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"

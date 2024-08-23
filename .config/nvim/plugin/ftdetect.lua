@@ -15,6 +15,18 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   end,
 })
 
+-- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+--   group = grp,
+--   pattern = {"*.java"},
+--   callback = function (ev)
+--     vim.api.nvim_buf_call(ev.buf, function()
+-- 	  vim.bo.tabstop = 2
+-- 	  vim.bo.softtabstop = 2
+-- 	  vim.bo.shiftwidth = 2
+--     end)
+--   end,
+-- })
+
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   group = grp,
   pattern = {"*.Jenkinsfile", "Jenkinsfile"},

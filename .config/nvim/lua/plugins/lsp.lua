@@ -413,7 +413,7 @@ return {
                         --   }
                         -- },
                         format = {
-                            enabled = true,
+                            enabled = false,
                             -- settings = {
                             --   profile = 'asdf'
                             -- },
@@ -538,16 +538,36 @@ return {
             local null_ls = require("null-ls")
             local grp = vim.api.nvim_create_augroup("LspFormatting", {})
 
+            local null_ls_helpers = require("null-ls.helpers")
+            local null_ls_methods = require("null-ls.methods")
+            local FORMATTING = null_ls_methods.internal.FORMATTING
+            local RANGE_FORMATTING = null_ls_methods.internal.RANGE_FORMATTING
+            local gradle_spotless_source = null_ls_helpers.make_builtin({
+                name = "gradle_spotless_apply",
+                meta = {
+                    description = "Reformats Java source code according to spotless config.",
+                },
+                method = { FORMATTING },
+                filetypes = { "java" },
+                generator_opts = {
+                    command = "gradle",
+                    args = { "spotlessApply" },
+                },
+                factory = null_ls_helpers.formatter_factory,
+            })
+
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.diagnostics.checkstyle.with({
-                        extra_args = { "-c", "config/checkstyle/checkstyle.xml" }
-                    }),
+                    -- null_ls.builtins.diagnostics.checkstyle.with({
+                    --     extra_args = { "-c", "config/checkstyle/checkstyle.xml" }
+                    -- }),
+
+                    -- Formatting
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.gofmt,
                     null_ls.builtins.formatting.goimports,
-                    null_ls.builtins.formatting.prettier.with({
-                        filetypes = { "javascript", "typescript", "typescriptreact" },
+                    null_ls.builtins.formatting.google_java_format.with({
+                        extra_args = { "--aosp" },
                     }),
                 },
                 on_attach = function(client, bufnr)

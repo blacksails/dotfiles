@@ -6,3 +6,7 @@
 /.config/zsh/.zsh_sessions
 /.config/zsh/.zsh_history
 /.config/gradle
+/.config/karabiner/automatic_backups
+/.config/helm
+/.config/jgit
+/.config/gh
