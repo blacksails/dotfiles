@@ -1,10 +1,11 @@
 /.files
 /.config/zsh/.zcompdump
-/.config/git/auth
+/.config/zsh/**/*.zwc
 /.config/zsh/secrets.zsh
-/.config/nvim/plugin/packer_compiled.lua
 /.config/zsh/.zsh_sessions
 /.config/zsh/.zsh_history
+/.config/git/auth
+/.config/nvim/plugin/packer_compiled.lua
 /.config/gradle
 /.config/karabiner/automatic_backups
 /.config/helm
