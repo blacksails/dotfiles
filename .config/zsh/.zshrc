@@ -17,8 +17,21 @@ for file in $ZDOTDIR/beforeplugins.conf.d/*.zsh; do
   . $file
 done
 
-# load zplug
-. "$ZDOTDIR/zplug.zsh"
+# setup znap
+export ZNAP_REPOS=$XDG_DATA_HOME/znap
+[[ -r "$ZNAP_REPOS" ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git $ZNAP_REPOS/znap
+source $ZNAP_REPOS/znap/znap.zsh
+
+znap source ohmyzsh/ohmyzsh lib/completion
+znap source ohmyzsh/ohmyzsh plugins/git
+znap source ohmyzsh/ohmyzsh plugins/kubectl
+znap source ohmyzsh/ohmyzsh plugins/asdf
+znap source zsh-users/zsh-history-substring-search
+
+znap install zsh-users/zsh-completions
+znap fpath _kubectl 'kubectl completion  zsh'
 
 # load other config files
 for file in $ZDOTDIR/conf.d/*.zsh; do
