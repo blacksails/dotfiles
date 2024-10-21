@@ -1,6 +1,23 @@
 return {
     {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require("dap").configurations.java = {
+                {
+                    type = "java",
+                    request = "launch",
+                    name = "Debug (Attach)",
+                    hostName = "localhost",
+                    port = 5005,
+                },
+            }
+        end,
+    },
+    {
         "mfussenegger/nvim-jdtls",
+        dependencies = {
+            { "mfussenegger/nvim-dap" },
+        },
         config = function()
             local features = {
                 -- change this to `true` to enable codelens
@@ -8,7 +25,7 @@ return {
 
                 -- change this to `true` if you have `nvim-dap`,
                 -- `java-test` and `java-debug-adapter` installed
-                debugger = false,
+                debugger = true,
             }
 
             local root_files = {
@@ -90,6 +107,18 @@ return {
                     --   name = 'JavaSE-18',
                     --   path = vim.fn.expand('~/.sdkman/candidates/java/18.0.2-amzn'),
                     -- },
+                    {
+                        name = "JavaSE-11",
+                        path = vim.fn.expand("~/.local/share/asdf/installs/java/temurin-11.0.24+8"),
+                    },
+                    {
+                        name = "JavaSE-17",
+                        path = vim.fn.expand("~/.local/share/asdf/installs/java/temurin-17.0.12+7"),
+                    },
+                    {
+                        name = "JavaSE-21",
+                        path = vim.fn.expand("~/.local/share/asdf/installs/java/temurin-21.0.3+9.0.LTS"),
+                    },
                 }
 
                 cache_vars.paths = path
@@ -166,7 +195,8 @@ return {
                 -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
                 local cmd = {
                     -- 💀
-                    "java",
+                    "/Users/blacksails/.local/share/asdf/installs/java/temurin-21.0.3+9.0.LTS/bin/java",
+                    --"java",
 
                     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
                     "-Dosgi.bundles.defaultStartLevel=4",
@@ -223,7 +253,7 @@ return {
                         --   }
                         -- },
                         format = {
-                            enabled = true,
+                            enabled = false,
                             -- settings = {
                             --   profile = 'asdf'
                             -- },

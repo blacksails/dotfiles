@@ -33,3 +33,5 @@ vim.opt.splitright = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.conceallevel = 1

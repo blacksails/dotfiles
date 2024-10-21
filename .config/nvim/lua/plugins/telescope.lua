@@ -1,13 +1,13 @@
 local config = function(_, opts)
-    local ts = require('telescope')
+    local ts = require("telescope")
     ts.setup(opts)
-    ts.load_extension('file_browser')
+    ts.load_extension("file_browser")
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-    vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-    vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+    vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+    vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+    vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
     vim.keymap.set("n", "<leader>pv", function()
         ts.extensions.file_browser.file_browser({
             path = "%:p:h",
@@ -24,12 +24,12 @@ end
 
 return {
     {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
         dependencies = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-file-browser.nvim",
-            'nvim-telescope/telescope-symbols.nvim',
+            "nvim-telescope/telescope-symbols.nvim",
         },
         opts = {
             defaults = {
@@ -39,16 +39,16 @@ return {
                     },
                 },
                 vimgrep_arguments = {
-                    'rg',
-                    '--color=never',
-                    '--no-heading',
-                    '--with-filename',
-                    '--line-number',
-                    '--column',
-                    '--smart-case',
-                    '--hidden',
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--hidden",
                 },
-                --file_ignore_patterns = { ".git", "node_modules" },
+                file_ignore_patterns = { ".git", "node_modules" },
                 sorting_strategy = "ascending",
             },
             extensions = {
@@ -67,6 +67,6 @@ return {
                 },
             },
         },
-        config = config
+        config = config,
     },
 }
