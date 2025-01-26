@@ -61,3 +61,5 @@
   path = ~/.config/git/bankdata
 [includeIf "gitdir:~/go/src/git.bankdata.eficode.io/"]
   path = ~/.config/git/bankdata
+[includeIf "gitdir:~/go/src/bitbucket/"]
+  path = ~/.config/git/systematic
