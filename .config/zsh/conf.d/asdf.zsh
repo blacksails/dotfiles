@@ -8,3 +8,5 @@ source $ASDF_DIR/asdf.sh
 if [ -f $ASDF_DIR/plugins/java/set-java-home.zsh ]; then
   . $ASDF_DIR/plugins/java/set-java-home.zsh
 fi
+
+znap source ohmyzsh/ohmyzsh plugins/asdf

@@ -12,11 +12,6 @@ if [[ -f "$ZDOTDIR/secrets.zsh" ]]; then
   . "$ZDOTDIR/secrets.zsh"
 fi
 
-# load files required before plugins
-for file in $ZDOTDIR/beforeplugins.conf.d/*.zsh; do
-  . $file
-done
-
 # setup znap
 export ZNAP_REPOS=$XDG_DATA_HOME/znap
 [[ -r "$ZNAP_REPOS" ]] ||
@@ -25,17 +20,13 @@ export ZNAP_REPOS=$XDG_DATA_HOME/znap
 source $ZNAP_REPOS/znap/znap.zsh
 
 znap source ohmyzsh/ohmyzsh lib/completion
-znap source ohmyzsh/ohmyzsh plugins/git
-znap source ohmyzsh/ohmyzsh plugins/kubectl
-znap source ohmyzsh/ohmyzsh plugins/asdf
-znap source zsh-users/zsh-history-substring-search
-
 znap install zsh-users/zsh-completions
-znap fpath _kubectl 'kubectl completion  zsh'
 
-# load other config files
+# config files
 for file in $ZDOTDIR/conf.d/*.zsh; do
   . $file
 done
+
+. $ZDOTDIR/starship.zsh
 
 autoload -U compinit&& compinit

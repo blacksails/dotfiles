@@ -1,4 +1,5 @@
-if type "eza" > /dev/null; then
+if command -v eza 2>&1 > /dev/null
+then
     alias ls='eza -lbF --git'
     alias l='eza -lbF --git'
     alias la='eza -labF --git'
