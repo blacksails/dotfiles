@@ -136,16 +136,12 @@ return {
                     "gopls",
                     "lua_ls",
                     "jdtls",
-                    "omnisharp",
                 },
                 handlers = {
                     function(server)
                         require("lspconfig")[server].setup({
                             capabilities = lsp_capabilities,
                         })
-                    end,
-                    omnisharp = function()
-                        require("lspconfig").omnisharp.setup({})
                     end,
                     jdtls = function() end,
                     lua_ls = function()
