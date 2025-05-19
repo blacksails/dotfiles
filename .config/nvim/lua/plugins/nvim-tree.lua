@@ -29,6 +29,7 @@ local function config()
         filters = {
             exclude = {
                 ".DS_Store",
+                ".git",
             }
         },
         view = {
