@@ -1,0 +1,9 @@
+# vi: ft=gitconfig
+[user]
+    name = Benjamin Nørgaard
+    email = benj@lunar.app
+    signingkey = ~/.ssh/github.pub
+[commit]
+    gpgsign = true
+[gpg]
+    format = ssh

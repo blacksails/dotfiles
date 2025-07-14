@@ -47,8 +47,6 @@
   rebase = false
 [init]
   defaultBranch = main
-[gpg]
-  program = /opt/homebrew/bin/gpg
 [credential "https://github.com"]
 	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
@@ -63,3 +61,5 @@
   path = ~/.config/git/bankdata
 [includeIf "gitdir:~/go/src/bitbucket/"]
   path = ~/.config/git/systematic
+[includeIf "gitdir:~/go/src/github.com/lunarway/"]
+  path = ~/.config/git/lunar
