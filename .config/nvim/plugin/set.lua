@@ -35,3 +35,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.conceallevel = 0
+
+-- lualine will show mode, so no reason to show it in the cmd line
+vim.opt.showmode = false
