@@ -23,3 +23,8 @@ dir = "plugins/git"
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins/kubectl"
 
+[plugins.lunar]
+local = "~/go/src/github.com/lunarway/lw-zsh"
+
+[plugins.lunar.hooks]
+post = "k8s_init benj@lunar.app"
