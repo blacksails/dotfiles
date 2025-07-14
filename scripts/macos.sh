@@ -29,7 +29,6 @@ brew install --cask \
   spotify \
   kitty \
   firefox \
-  1password \
   obsidian \
   nikitabobko/tap/aerospace \
   karabiner-elements \
