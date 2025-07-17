@@ -27,4 +27,5 @@ dir = "plugins/kubectl"
 local = "~/go/src/github.com/lunarway/lw-zsh"
 
 [plugins.lunar.hooks]
-post = "k8s_init benj@lunar.app"
+# initialize kubernetes and remove lunar keybinds 🙃
+post = "k8s_init benj@lunar.app && bindkey -d && bindkey -v"
