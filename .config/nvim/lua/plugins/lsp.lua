@@ -191,6 +191,7 @@ return {
             { "hrsh7th/cmp-path" },
             { "L3MON4D3/LuaSnip" },
             { "saadparwaiz1/cmp_luasnip" },
+            { "rafamadriz/friendly-snippets" },
         },
         config = function()
             local cmp = require("cmp")
@@ -214,11 +215,10 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                 }),
             }
+            require("luasnip.loaders.from_vscode").lazy_load()
+            --require("luasnip.loaders.from_snipmate").lazy_load()
             cmp.setup(opts)
         end,
-    },
-    {
-        "rafamadriz/friendly-snippets",
     },
     {
         "nvimtools/none-ls.nvim",
