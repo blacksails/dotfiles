@@ -28,4 +28,4 @@ local = "~/go/src/github.com/lunarway/lw-zsh"
 
 [plugins.lunar.hooks]
 # initialize kubernetes and remove lunar keybinds 🙃
-post = "k8s_init benj@lunar.app && bindkey -d && bindkey -v"
+post = "which k8s_init > /dev/null && k8s_init benj@lunar.app && bindkey -d && bindkey -v"
