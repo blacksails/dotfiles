@@ -3,11 +3,27 @@ return {
         "folke/trouble.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = {},
-        config = function(_, opts)
-            require("trouble").setup(opts)
-            vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-                {silent = true, noremap = true}
-            )
-        end
+        keys = {
+            {
+                "<leader>xx",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+            {
+                "<leader>xX",
+                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+                desc = "Buffer Diagnostics (Trouble)",
+            },
+            {
+                "<leader>cs",
+                "<cmd>Trouble symbols toggle focus=false<cr>",
+                desc = "Symbols (Trouble)",
+            },
+            {
+                "<leader>cl",
+                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+                desc = "LSP Definitions / references / ... (Trouble)",
+            },
+        }
     },
 }
