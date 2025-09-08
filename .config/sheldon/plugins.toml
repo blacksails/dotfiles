@@ -5,15 +5,8 @@ shell = "zsh"
 [plugins.confd]
 local = "~/.config/zsh/conf.d"
 
-[plugins.completions]
-local = "~/.config/zsh/completions"
-apply = ['fpath']
-
 [plugins.secrets]
 local = "~/.config/zsh/secrets.d"
-
-[plugins.zsh-history-substring-search]
-github = "zsh-users/zsh-history-substring-search"
 
 [plugins.omz-git]
 github = "ohmyzsh/ohmyzsh"
