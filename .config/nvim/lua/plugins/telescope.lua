@@ -1,7 +1,6 @@
 local config = function(_, opts)
     local ts = require("telescope")
     ts.setup(opts)
-    ts.load_extension("file_browser")
     local builtin = require("telescope.builtin")
 
     vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
@@ -28,7 +27,6 @@ return {
         tag = "0.1.8",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
             "nvim-telescope/telescope-symbols.nvim",
         },
         opts = {
@@ -50,21 +48,6 @@ return {
                 },
                 file_ignore_patterns = { ".git", "node_modules" },
                 sorting_strategy = "ascending",
-            },
-            extensions = {
-                file_browser = {
-                    --theme = "ivy",
-                    -- disables netrw and use telescope-file-browser in its place
-                    hijack_netrw = true,
-                    mappings = {
-                        ["i"] = {
-                            -- your custom insert mode mappings
-                        },
-                        ["n"] = {
-                            -- your custom normal mode mappings
-                        },
-                    },
-                },
             },
         },
         config = config,
