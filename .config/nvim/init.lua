@@ -9,3 +9,5 @@ require("lazy").setup({
         notify = false,
     },
 })
+
+require("autocmds.setup")
