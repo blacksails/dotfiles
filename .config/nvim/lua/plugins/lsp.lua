@@ -67,8 +67,11 @@ return {
                 desc = "LSP actions",
                 callback = function(event)
                     local bufnr = event.buf
-                    local map = function(m, lhs, rhs)
-                        local opts = { buffer = bufnr }
+                    local map = function(m, lhs, desc, rhs)
+                        local opts = {
+                            buffer = bufnr,
+                            desc = desc,
+                        }
                         vim.keymap.set(m, lhs, rhs, opts)
                     end
 
@@ -79,31 +82,31 @@ return {
                     })
 
                     -- LSP actions
-                    map("n", "K", function()
+                    map("n", "K", "Show signature", function()
                         vim.lsp.buf.hover()
                     end)
-                    map("n", "gd", function()
+                    map("n", "gd", "Go to definition", function()
                         vim.lsp.buf.definition()
                     end)
-                    map("n", "gD", function()
+                    map("n", "gD", "Go to declaration", function()
                         vim.lsp.buf.declaration()
                     end)
-                    map("n", "<leader>vrn", function()
+                    map("n", "<leader>vrn", "Rename", function()
                         vim.lsp.buf.rename()
                     end)
-                    map("n", "<leader>vca", function()
+                    map("n", "<leader>vca", "Code action", function()
                         vim.lsp.buf.code_action()
                     end)
-                    map("n", "<leader>vd", function()
+                    map("n", "<leader>vd", "Show diagnostics", function()
                         vim.diagnostic.open_float()
                     end)
-                    map("n", "[d", function()
+                    map("n", "[d", "Next diagnostic", function()
                         vim.diagnostic.goto_next()
                     end)
-                    map("n", "]d", function()
+                    map("n", "]d", "Previous diagnostic", function()
                         vim.diagnostic.goto_prev()
                     end)
-                    map("n", "<leader>vws", function()
+                    map("n", "<leader>vws", "Workspace symbol", function()
                         vim.lsp.buf.workspace_symbol()
                     end)
                 end,
@@ -226,6 +229,7 @@ return {
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.gofmt,
                     null_ls.builtins.formatting.goimports,
+                    null_ls.builtins.formatting.black,
                     null_ls.builtins.formatting.google_java_format.with({
                         extra_args = { "--aosp" },
                     }),
