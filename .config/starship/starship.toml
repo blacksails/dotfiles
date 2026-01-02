@@ -32,6 +32,7 @@ deleted_style = 'red'
 only_nonzero_diffs = false
 
 [golang]
+disabled = true
 format = "[$symbol($version )]($style)"
 
 [gradle]
