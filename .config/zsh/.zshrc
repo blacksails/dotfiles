@@ -14,12 +14,18 @@ if [[ ! -f $ZINIT_HOME/zinit.zsh ]]; then
 fi
 source "$ZINIT_HOME/zinit.zsh"
 
-# Prompt (cached for speed)
+# Prompt
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 zinit ice as"command" from"gh-r" \
     atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
     atpull"%atclone" src"init.zsh"
 zinit light starship/starship
+
+# Zoxide
+zinit ice as"command" from"gh-r" \
+    atclone"./zoxide init zsh --cmd cd > init.zsh" \
+    atpull"%atclone" src"init.zsh"
+zinit light ajeetdsouza/zoxide
 
 # Local config files (load immediately - exports/aliases needed early)
 for conf in $ZDOTDIR/conf.d/*.zsh; do
@@ -34,23 +40,20 @@ zinit wait lucid for \
     OMZP::git \
     OMZP::kubectl
 
-# Lunar plugin (deferred)
-zinit ice wait'0' lucid atload'k8s_init benj@lunar.app && bindkey -d && bindkey -v'
-zinit light ~/go/src/github.com/lunarway/lw-zsh
+# TODO: set this up to load only when available
+# zinit ice wait lucid atload'k8s_init benj@lunar.app && bindkey -d && bindkey -v'
+# zinit light ~/go/src/github.com/lunarway/lw-zsh
 
 # Completions (deferred - generated on install/update, cached otherwise)
 zinit ice wait lucid as"completion" has"kubectl" id-as"kubectl-comp" \
     atclone"kubectl completion zsh > _kubectl" atpull"%atclone"
 zinit snippet /dev/null
-
 zinit ice wait lucid as"completion" has"stern" id-as"stern-comp" \
     atclone"stern --completion zsh > _stern" atpull"%atclone"
 zinit snippet /dev/null
-
 zinit ice wait lucid as"completion" has"gh" id-as"gh-comp" \
     atclone"gh completion -s zsh > _gh" atpull"%atclone"
 zinit snippet /dev/null
-
 zinit ice wait lucid as"completion" has"sqlc" id-as"sqlc-comp" \
     atclone"sqlc completion zsh > _sqlc" atpull"%atclone"
 zinit snippet /dev/null
