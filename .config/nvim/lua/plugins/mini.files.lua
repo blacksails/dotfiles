@@ -1,9 +1,22 @@
 local function config()
+	-- Dotfiles toggle
+	local show_dotfiles = true
+	local filter = function(fs_entry)
+		if show_dotfiles then
+			return true
+		end
+		return not vim.startswith(fs_entry.name, ".")
+	end
+	local toggle_dotfiles = function()
+		show_dotfiles = not show_dotfiles
+		MiniFiles.refresh({ content = { filter = filter } })
+	end
+
 	require("mini.files").setup({
 		-- Customization of shown content
 		content = {
 			-- Predicate for which file system entries to show
-			filter = nil,
+			filter = filter,
 			-- What prefix to show to the left of file system entry
 			prefix = nil,
 			-- In which order to show file system entries
@@ -79,13 +92,15 @@ local function config()
 			map_split(buf_id, "<C-s>", "belowright horizontal")
 			map_split(buf_id, "<C-v>", "belowright vertical")
 			map_split(buf_id, "<C-t>", "tab")
+			vim.keymap.set("n", "<C-.>", toggle_dotfiles, { buffer = buf_id, desc = "Toggle dotfiles" })
 		end,
 	})
 end
 
 return {
-	"echasnovski/mini.files",
+	"nvim-mini/mini.files",
 	version = false,
+	dependencies = { "nvim-mini/mini.icons" },
 	config = config,
 	lazy = true,
 	keys = {
