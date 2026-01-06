@@ -35,6 +35,18 @@ for secret in $ZDOTDIR/secrets.d/*.zsh(N); do
     source "$secret"
 done
 
+# Autosuggestions
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
+
+# Syntax highlighting
+zinit ice wait lucid
+zinit light zsh-users/zsh-syntax-highlighting
+
+# fzf-tab
+zinit ice wait lucid
+zinit light Aloxaf/fzf-tab
+
 # OMZ plugins with turbo mode (deferred loading)
 zinit wait lucid for \
     OMZP::git \
@@ -48,12 +60,15 @@ zinit wait lucid for \
 zinit ice wait lucid as"completion" has"kubectl" id-as"kubectl-comp" \
     atclone"kubectl completion zsh > _kubectl" atpull"%atclone"
 zinit snippet /dev/null
+
 zinit ice wait lucid as"completion" has"stern" id-as"stern-comp" \
     atclone"stern --completion zsh > _stern" atpull"%atclone"
 zinit snippet /dev/null
+
 zinit ice wait lucid as"completion" has"gh" id-as"gh-comp" \
     atclone"gh completion -s zsh > _gh" atpull"%atclone"
 zinit snippet /dev/null
+
 zinit ice wait lucid as"completion" has"sqlc" id-as"sqlc-comp" \
     atclone"sqlc completion zsh > _sqlc" atpull"%atclone"
 zinit snippet /dev/null
