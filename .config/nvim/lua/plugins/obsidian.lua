@@ -5,7 +5,7 @@ return {
 	ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-mini/mini.pick",
+		"ibhagwan/fzf-lua",
 	},
 	keys = {
 		{ "<leader>ov", "<cmd>Obsidian open<cr>", desc = "Open Obsidian app" },
@@ -25,9 +25,6 @@ return {
 				name = "shared",
 				path = "~/Vaults/Shared",
 			},
-		},
-		picker = {
-			name = "mini.pick",
 		},
 	},
 }

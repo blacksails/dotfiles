@@ -105,11 +105,18 @@ return {
 	lazy = true,
 	keys = {
 		{
-			"<leader>pv",
+			"<leader>pV",
 			function()
 				require("mini.files").open()
 			end,
-			desc = "Open Mini Files",
+			desc = "Open Mini Files at cwd",
+		},
+		{
+			"<leader>pv",
+			function()
+				require("mini.files").open(vim.api.nvim_buf_get_name(0))
+			end,
+			desc = "Open Mini Files at current file",
 		},
 	},
 }
