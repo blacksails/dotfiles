@@ -7,8 +7,19 @@ return {
 			signature = {
 				enabled = true,
 			},
+			sources = {
+				-- add lazydev to your completion providers
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						-- make lazydev completions top priority (see `:h blink.cmp`)
+						score_offset = 100,
+					},
+				},
+			},
 		},
-		opts_extend = { "sources.default" },
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -60,10 +71,10 @@ return {
 						vim.diagnostic.open_float()
 					end)
 					map("n", "[d", "Next diagnostic", function()
-						vim.diagnostic.goto_next()
+						vim.diagnostic.jump({ count = 1 })
 					end)
 					map("n", "]d", "Previous diagnostic", function()
-						vim.diagnostic.goto_prev()
+						vim.diagnostic.jump({ count = -1 })
 					end)
 					map("n", "<leader>vws", "Workspace symbol", function()
 						vim.lsp.buf.workspace_symbol()
@@ -86,14 +97,4 @@ return {
 			},
 		},
 	},
-	--{
-	--    "ray-x/lsp_signature.nvim",
-	--    opts = {
-	--        bind = true, -- This is mandatory, otherwise border config won't get registered.
-	--        hint_enable = false,
-	--        handler_opts = {
-	--            border = "rounded",
-	--        },
-	--    },
-	--},
 }
