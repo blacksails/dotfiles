@@ -4,7 +4,11 @@ return {
 	lazy = true,
 	keys = {
 		{ "<C-p>", "<cmd>FzfLua files<cr>", desc = "Pick files" },
-		{ "<leader>ps", "<cmd>FzfLua live_grep<cr>", desc = "Grep live" },
+		{ "<leader>ps", "<cmd>FzfLua live_grep<cr>", desc = "Grep live", mode = { "n" } },
+		{ "<leader>ps", "<cmd>FzfLua grep_visual<cr>", desc = "Grep live", mode = { "v" } },
+		{ "<leader>pw", "<cmd>FzfLua grep_cword<cr>", desc = "Grep for current word" },
+		{ "<leader>pf", "<cmd>FzfLua files<cr>", desc = "Pick files" },
+		{ "<leader>pb", "<cmd>FzfLua buffers<cr>", desc = "Pick buffers" },
 	},
 	opts = {
 		winopts = {
