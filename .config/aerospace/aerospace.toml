@@ -239,3 +239,8 @@ automatically-unhide-macos-hidden-apps = true
 [[on-window-detected]]
     if.app-id = 'com.jetbrains.datagrip'
     run = 'move-node-to-workspace D'
+
+# Set floating layout for specific applications
+[[on-window-detected]]
+    if.app-id = 'com.electron.brain.fm'
+    run = 'layout floating'
