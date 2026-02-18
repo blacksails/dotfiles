@@ -7,14 +7,23 @@ return {
 			signature = {
 				enabled = true,
 			},
+			completion = {
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 100,
+				},
+				menu = {
+					draw = {
+						columns = { { "label", "label_description", gap = 1 }, { "kind" } },
+					},
+				},
+			},
 			sources = {
-				-- add lazydev to your completion providers
 				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
-						-- make lazydev completions top priority (see `:h blink.cmp`)
 						score_offset = 100,
 					},
 				},
@@ -93,8 +102,15 @@ return {
 			ensure_installed = {
 				"gopls",
 				"lua_ls",
-				"bash-language-server",
+				"bashls",
 			},
 		},
+		config = function(_, opts)
+			require("mason-lspconfig").setup(opts)
+
+			vim.lsp.config("bashls", {
+				filetypes = { "bash", "sh", "zsh" },
+			})
+		end,
 	},
 }

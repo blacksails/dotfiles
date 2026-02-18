@@ -13,6 +13,7 @@ return {
 		{ "<leader>op", "<cmd>Obsidian quick_switch<cr>", desc = "Search for files in vault" },
 		{ "<leader>ow", "<cmd>Obsidian workspace<cr>", desc = "Switch Obsidian vault" },
 		{ "<leader>on", "<cmd>Obsidian new<cr>", desc = "Create new note" },
+		{ "<leader>od", "<cmd>Obsidian today<cr>", desc = "Open daily note" },
 	},
 	opts = {
 		legacy_commands = false,
