@@ -52,9 +52,14 @@ zinit wait lucid for \
     OMZP::git \
     OMZP::kubectl
 
-# TODO: set this up to load only when available
-# zinit ice wait lucid atload'k8s_init benj@lunar.app && bindkey -d && bindkey -v'
-# zinit light ~/go/src/github.com/lunarway/lw-zsh
+# Load Lunar plugin if available
+#zinit ice wait lucid \
+#    if"[[ -f ~/go/src/github.com/lunarway/lw-zsh/lw-zsh-core/lw-zsh-core.plugin.zsh ]]" \
+#    pick"lw-zsh-core/lw-zsh-core.plugin.zsh"
+zinit ice wait lucid \
+    if"[[ -f ~/go/src/github.com/lunarway/lw-zsh/lw-zsh.plugin.zsh ]]" \
+    pick"lw-zsh.plugin.zsh"
+zinit light ~/go/src/github.com/lunarway/lw-zsh
 
 # Completions (deferred - generated on install/update, cached otherwise)
 zinit ice wait lucid as"completion" has"kubectl" id-as"kubectl-comp" \
@@ -76,3 +81,6 @@ zinit snippet /dev/null
 # Initialize completions (after all completions are set up)
 zinit ice wait'1' lucid atinit'autoload -Uz compinit; compinit -C -d "$ZDOTDIR/.zcompdump"'
 zinit light zdharma-continuum/null
+
+zinit ice depth=1 wait lucid
+zinit light jeffreytse/zsh-vi-mode
