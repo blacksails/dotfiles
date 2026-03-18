@@ -27,6 +27,12 @@ zinit ice as"command" from"gh-r" \
     atpull"%atclone" src"init.zsh"
 zinit light ajeetdsouza/zoxide
 
+# go-fly
+zinit ice as"command" from"gh-r" pick"fly" \
+    atclone"./fly init > init.zsh; ./fly refresh &!" \
+    atpull"%atclone" src"init.zsh"
+zinit light TheOneWithTheWrench/go-fly
+
 # Local config files (load immediately - exports/aliases needed early)
 for conf in $ZDOTDIR/conf.d/*.zsh; do
     source "$conf"
@@ -56,10 +62,10 @@ zinit wait lucid for \
 #zinit ice wait lucid \
 #    if"[[ -f ~/go/src/github.com/lunarway/lw-zsh/lw-zsh-core/lw-zsh-core.plugin.zsh ]]" \
 #    pick"lw-zsh-core/lw-zsh-core.plugin.zsh"
-zinit ice wait lucid \
-    if"[[ -f ~/go/src/github.com/lunarway/lw-zsh/lw-zsh.plugin.zsh ]]" \
-    pick"lw-zsh.plugin.zsh"
-zinit light ~/go/src/github.com/lunarway/lw-zsh
+#zinit ice wait lucid \
+#    if"[[ -f ~/go/src/github.com/lunarway/lw-zsh/lw-zsh.plugin.zsh ]]" \
+#    pick"lw-zsh.plugin.zsh"
+#zinit light ~/go/src/github.com/lunarway/lw-zsh
 
 # Completions (deferred - generated on install/update, cached otherwise)
 zinit ice wait lucid as"completion" has"kubectl" id-as"kubectl-comp" \
