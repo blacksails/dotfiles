@@ -1,0 +1,15 @@
+version = 1
+
+[clone]
+default_directory = "~/go/src/github.com"
+group_by_owner = true
+
+[sources]
+enabled = ["zoxide", "remote"]
+
+[picker]
+title = ""
+prompt_marker = "> "
+window_position = "bottom"
+matcher = "orderedchars"
+sorter = "signal_minipick"
