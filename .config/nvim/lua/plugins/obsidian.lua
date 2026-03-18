@@ -14,9 +14,14 @@ return {
 		{ "<leader>ow", "<cmd>Obsidian workspace<cr>", desc = "Switch Obsidian vault" },
 		{ "<leader>on", "<cmd>Obsidian new<cr>", desc = "Create new note" },
 		{ "<leader>od", "<cmd>Obsidian today<cr>", desc = "Open daily note" },
+		{ "<leader>ot", "<cmd>Obsidian toggle_checkbox<cr>", desc = "Toggle checkbox" },
 	},
 	opts = {
 		legacy_commands = false,
+		checkbox = {
+			order = { " ", "x" },
+			create_new = true,
+		},
 		workspaces = {
 			{
 				name = "personal",
