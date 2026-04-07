@@ -108,6 +108,16 @@ return {
 		config = function(_, opts)
 			require("mason-lspconfig").setup(opts)
 
+			vim.lsp.config("gopls", {
+				settings = {
+					gopls = {
+						analyses = {
+							copylocks = false,
+						},
+					},
+				},
+			})
+
 			vim.lsp.config("bashls", {
 				filetypes = { "bash", "sh", "zsh" },
 			})
