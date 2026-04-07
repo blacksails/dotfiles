@@ -58,6 +58,7 @@
                     },
                     {
                         "description": "Homerow mods GACS (left: asdf, right: jkl;)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
